@@ -1,21 +1,13 @@
 <?php
-$host     = 'localhost';
-$db_name  = 'cerita_db';
-$username = 'cerita_user';
-$password = 'PasswordWeb123!';
-$charset  = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
-
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+$host = 'localhost';
+$dbname = 'cerita_db';
+$user = 'cerita_user';
+$pass = 'rahasia123';
 
 try {
-    $pdo = new PDO($dsn, $username, $password, $options);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Koneksi database gagal: " . $e->getMessage());
+    die("Error Database: " . $e->getMessage());
 }
 ?>
