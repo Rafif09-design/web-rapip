@@ -1,6 +1,6 @@
 <?php
-require_once 'config/database.php';
-require_once 'includes/header.php';
+require_once 'database.php';
+require_once 'header.php';
 
 // Ambil semua cerita
 $stmt = $pdo->query("
